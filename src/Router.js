@@ -5,7 +5,7 @@ import About from './pages/About';
 import Footer from './pages/footer';
 import NotFound from './pages/NotFound';
 import Links from './components/Links';
-import App from './Main';
+import Main from './Main';
 
 function Router() {
   return (
@@ -20,7 +20,7 @@ function Router() {
     <BrowserRouter>
       <Links />
       <Routes>
-        <Route path="/react" element={<App />} />
+        <Route path="/react" element={<Main />} />
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
