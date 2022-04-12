@@ -6,16 +6,16 @@ const Todo = ({ todo, dispatch }) => {
   const { complete } = todo;
   return (
     <Div>
-      <Span 
-      // style={{ color: complete ? 'black' : 'red' }} 
-      // todo={todo}
-      complete={complete}
+      <Span
+        // style={{ color: complete ? 'black' : 'red' }}
+        // todo={todo}
+        complete={complete}
       >
         {todo.name}
       </Span>
       <button
-        onClick={() => {
-          dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } });
+        onClick={() =>{
+          dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } })
         }}
         // calls dispatch with the toogel-todo type and gives id of current todo inside payload
       >
