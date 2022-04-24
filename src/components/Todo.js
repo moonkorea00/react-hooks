@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ACTIONS } from './UseReducerHook2';
+import { ACTIONS } from './UseReducer2';
 
 const Todo = ({ todo, dispatch }) => {
   console.log('todo:', todo);

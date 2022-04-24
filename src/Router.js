@@ -1,11 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import About from './pages/About';
+import About from './pages/WindowWidth';
 import Footer from './pages/footer';
 import NotFound from './pages/NotFound';
 import Links from './components/Links';
-import Main from './Main';
+
+import WindowWidth from './pages/WindowWidth';
+import UseReducerHook1 from './pages/UseReducerHook1';
+import UseReducerHook2 from './pages/UseReducerHook2';
 
 function Router() {
   return (
@@ -20,16 +23,22 @@ function Router() {
     <BrowserRouter>
       <Links />
       <Routes>
-        <Route path="/react" element={<Main />} />
+        {/* <Route path="/react" element={<Main />} /> */}
+        {/* <Route path="/home" element={<Home />} /> */}
+        <Route path="/windowWidth" element={<WindowWidth />} />
+        <Route path="/useReducerHook1" element={<UseReducerHook1 />} />
+        <Route path="/useReducerHook2" element={<UseReducerHook2 />} />
+
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
-        <Route path="/" exact element={<Home />} />
-        <Route path="*" element={<NotFound />} />
+
+        {/* <Route patj="/main" element={<Main />} /> */}
+        {/* <Route path="/*" element={<NotFound />} /> */}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
-};
+}
 
 export default Router;

@@ -14,7 +14,6 @@ const reducer = (todos, action) => {
     case ACTIONS.TOGGLE_TODO:
       return todos.map(todo => {
         if (todo.id === action.payload.id) {
-          // return { ...todo, complete: !todo.complete };
           return { ...todo, complete: !todo.complete };
         }
         return todo;
