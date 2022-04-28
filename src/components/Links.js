@@ -20,6 +20,15 @@ const Links = () => {
           <li>
             <Link to="/useReducerHook2">useReducerHook2</Link>
           </li>
+          <li>
+            <Link to="/userExample">추가/제거/수정</Link>
+          </li>
+          <li>
+            <Link to="/controlledInputs">Controlled Inputs</Link>
+          </li>
+          <li>
+            <Link to="/bank">Bank</Link>
+          </li>
         </ul>
       )}
       <li>

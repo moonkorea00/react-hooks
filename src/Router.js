@@ -5,10 +5,12 @@ import About from './pages/WindowWidth';
 import Footer from './pages/footer';
 import NotFound from './pages/NotFound';
 import Links from './components/Links';
-
+import Bank from './pages/Bank/Bank';
 import WindowWidth from './pages/WindowWidth';
 import UseReducerHook1 from './pages/UseReducerHook1';
 import UseReducerHook2 from './pages/UseReducerHook2';
+import UserExample from './pages/UserExample/UserExample';
+import ControlledInputs from './pages/ControlledInputs';
 
 function Router() {
   return (
@@ -28,7 +30,10 @@ function Router() {
         <Route path="/windowWidth" element={<WindowWidth />} />
         <Route path="/useReducerHook1" element={<UseReducerHook1 />} />
         <Route path="/useReducerHook2" element={<UseReducerHook2 />} />
-
+        <Route path="/userExample" element={<UserExample />} />
+        <Route path="/controlledInputs" element={<ControlledInputs />} />
+        <Route path="/bank" element={<Bank />} />
+        {/* <Route path="/userExample" element={<UserExample />} /> */}
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />

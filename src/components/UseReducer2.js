@@ -12,12 +12,17 @@ const reducer = (todos, action) => {
     case ACTIONS.ADD_TODO:
       return [...todos, newTodo(action.payload.name)];
     case ACTIONS.TOGGLE_TODO:
-      return todos.map(todo => {
-        if (todo.id === action.payload.id) {
-          return { ...todo, complete: !todo.complete };
-        }
-        return todo;
-      });
+      // return todos.map(todo => {
+      //   if (todo.id === action.payload.id) {
+      //     return { ...todo, complete: !todo.complete };
+      //   }
+      //   return todo;
+      // });
+      return todos.map(todo =>
+        todo.id === action.payload.id
+          ? { ...todo, complete: !todo.complete }
+          : todo
+      );
     case ACTIONS.DELETE_TODO:
       return todos.filter(todo => todo.id !== action.payload.id);
     default:
