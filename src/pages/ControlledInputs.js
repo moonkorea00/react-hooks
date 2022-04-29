@@ -45,7 +45,7 @@ const ControlledInputs = () => {
             placeholder="Insert Information"
             required
           ></textarea>
-          <select name='options' value={options} onChange={onChange}>
+          <select name='options' defaultValue='select' value={options} onChange={onChange}>
             <option value="option1">option1</option>
             <option value="option2">option2</option>
           </select>

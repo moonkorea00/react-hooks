@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+
 import Profile from './pages/Profile';
 import About from './pages/WindowWidth';
-import Footer from './pages/footer';
-import NotFound from './pages/NotFound';
 import Links from './components/Links';
 import Bank from './pages/Bank/Bank';
+import Students from './pages/Students/Students';
 import WindowWidth from './pages/WindowWidth';
 import UseReducerHook1 from './pages/UseReducerHook1';
 import UseReducerHook2 from './pages/UseReducerHook2';
@@ -33,6 +32,7 @@ function Router() {
         <Route path="/userExample" element={<UserExample />} />
         <Route path="/controlledInputs" element={<ControlledInputs />} />
         <Route path="/bank" element={<Bank />} />
+        <Route path="/students" element={<Students />} />
         {/* <Route path="/userExample" element={<UserExample />} /> */}
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />

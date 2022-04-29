@@ -27,7 +27,10 @@ const Links = () => {
             <Link to="/controlledInputs">Controlled Inputs</Link>
           </li>
           <li>
-            <Link to="/bank">Bank</Link>
+            <Link to="/bank">useReducer - Bank</Link>
+          </li>
+          <li>
+            <Link to="/students">useReducer - Student List</Link>
           </li>
         </ul>
       )}
