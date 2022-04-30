@@ -9,7 +9,7 @@ import WindowWidth from './pages/WindowWidth';
 import UseReducerHook1 from './pages/UseReducerHook1';
 import UseReducerHook2 from './pages/UseReducerHook2';
 import UserExample from './pages/UserExample/UserExample';
-import ControlledInputs from './pages/ControlledInputs';
+import ControlledInputs from './pages/ContorlledInputs/ControlledInputs';
 
 function Router() {
   return (

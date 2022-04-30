@@ -50,7 +50,7 @@ const Students = () => {
           borderRadius: '16px',
           width: '32px',
           height: '32px',
-          display: 'flex',
+          display: 'block',
           justifyContent: 'center',
           alignItems:'center'
         }}
@@ -58,7 +58,7 @@ const Students = () => {
         <MdDone />
       </div>
       <MdDelete />
-      <h1>출석부</h1>
+      <h1 onClick={(e)=>console.log(e)}>출석부</h1>
       <p>총 학생 수: {studentsInfo.count}</p>
       <input
         type="text"
