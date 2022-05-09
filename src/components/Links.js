@@ -32,6 +32,9 @@ const Links = () => {
           <li>
             <Link to="/students">useReducer - Student List</Link>
           </li>
+          <li>
+            <Link to="/users">API practice</Link>
+          </li>
         </ul>
       )}
       <li>

@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Profile from './pages/Profile';
 import About from './pages/WindowWidth';
 import Links from './components/Links';
@@ -10,6 +9,7 @@ import UseReducerHook1 from './pages/UseReducerHook1';
 import UseReducerHook2 from './pages/UseReducerHook2';
 import UserExample from './pages/UserExample/UserExample';
 import ControlledInputs from './pages/ContorlledInputs/ControlledInputs';
+import Users from './pages/API/Users(useReducer)';
 
 function Router() {
   return (
@@ -37,7 +37,7 @@ function Router() {
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
-
+        <Route path="/users" element={<Users />} />
         {/* <Route patj="/main" element={<Main />} /> */}
         {/* <Route path="/*" element={<NotFound />} /> */}
       </Routes>

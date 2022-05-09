@@ -1,6 +1,8 @@
-import { useState, useReducer } from 'react';
+import {  useReducer } from 'react';
+import Books from './books';
 
 export const ACTION = {
+  onchange: 'onchange',
   create: 'create',
   delete: 'delete',
   toggle: 'toggle',
@@ -8,31 +10,60 @@ export const ACTION = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case ACTION.onchange:
+      return {
+        ...state,
+        inputs: {
+          ...state.inputs,
+          [action.payload.name]: action.payload.value,
+        },
+      };
     case ACTION.create:
-      return;
-    case ACTION.delete:
-      return;
+      return {
+        books: state.books + 1,
+        ...state,
+        book: [
+          ...state.book,
+          {
+            id: Date.now(),
+            title: action.payload.title,
+            body: action.payload.body,
+          },
+        ],
+      };
     case ACTION.toggle:
-      return;
+      return {...state, book: state.book.map(book =>
+        book.id === action.payload ? { ...book, isRead: !book.isRead } : book
+      )}
+    case ACTION.delete:
+      return {
+        ...state,
+        book: state.book.filter(book=>action.payload!==book.id)
+      };
   }
 };
 const ControlledInputs = () => {
-  const [state, dispatch] = useReducer(reducer, { books: 0, book: [] });
-  const [inputs, setInputs] = useState({ title: '', body: '', options: '' });
-  const { title, body, options } = inputs;
+  const [state, dispatch] = useReducer(reducer, {
+    books: 1,
+    inputs: { title: '', body: '' },
+    book: [
+      { id: 1, title: 'Harry Potter', body: 'fantasy novel', isRead: false },
+    ],
+  });
+  // const [inputs, setInputs] = useState({ title: '', body: '', options: '' });
+  // const { title, body, options } = inputs;
+
   const onChange = e => {
     const { name, value } = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
+    dispatch({ type: ACTION.onchange, payload: { name, value } });
   };
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(inputs);
+    dispatch({ type: ACTION.create, payload: { title, body } });
   };
 
+  const { title, body } = state.inputs;
   return (
     <>
       <div
@@ -51,7 +82,7 @@ const ControlledInputs = () => {
           <input
             type="text"
             name="title"
-            value={title}
+            value={state.inputs.title}
             onChange={onChange}
             placeholder="Insert Title"
             required
@@ -59,12 +90,12 @@ const ControlledInputs = () => {
           <label>body</label>
           <textarea
             name="body"
-            value={body}
+            value={state.inputs.body}
             onChange={onChange}
             placeholder="Insert Information"
             required
           ></textarea>
-          <select
+          {/* <select
             name="options"
             defaultValue="select"
             value={options}
@@ -72,10 +103,14 @@ const ControlledInputs = () => {
           >
             <option value="option1">option1</option>
             <option value="option2">option2</option>
-          </select>
+          </select> */}
           <button>Add</button>
         </form>
       </div>
+      <p>books: {state.books}</p>
+      {state.book.map(book => {
+        return <Books book={book} key={book.id} dispatch={dispatch} />;
+      })}
     </>
   );
 };
