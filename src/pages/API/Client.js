@@ -1,10 +1,14 @@
+import useAsync from '../../hooks/useAsync';
+
 const Client = ({ data }) => {
   const { name, email } = data;
+
   return (
-    <div>
-      {name}
-      {email}
-    </div>
+    <ul>
+      <li style={{ cursor: 'pointer' }}>
+        <b>name:</b> {name} <b>email:</b> {email}
+      </li>
+    </ul>
   );
 };
 

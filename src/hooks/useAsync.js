@@ -29,7 +29,7 @@ const reducer = (state, action) => {
   }
 };
 
-const useAsync = (callback) => {
+const useAsync = (callback, deps = [], skip = false) => {
   const [state, dispatch] = useReducer(reducer, {
     loading: false,
     data: null,
@@ -40,8 +40,7 @@ const useAsync = (callback) => {
     dispatch({ type: ACTION.LOADING });
     try {
       console.log('one');
-      const data = await callback()
-      const res = await data.json();
+      const res = await callback();
       console.log('two');
       dispatch({ type: ACTION.SUCCESS, payload: res });
       console.log('three');
@@ -52,8 +51,9 @@ const useAsync = (callback) => {
   };
 
   useEffect(() => {
+    if (skip) return;
     fetchData();
-  }, []);
+  }, deps);
   return [state, fetchData];
 };
 

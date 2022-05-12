@@ -9,7 +9,7 @@ const StudentList = ({ el, dispatch }) => {
       </span>
       <button
         onClick={() => {
-          dispatch({ type: ACTIONS.delete, payload: id });
+          dispatch({ type: ACTIONS.delete, payload: id });  
         }}
       >
         삭제

@@ -9,7 +9,8 @@ import UseReducerHook1 from './pages/UseReducerHook1';
 import UseReducerHook2 from './pages/UseReducerHook2';
 import UserExample from './pages/UserExample/UserExample';
 import ControlledInputs from './pages/ContorlledInputs/ControlledInputs';
-import Users from './pages/API/Users(useReducer)';
+import Users from './pages/API/Users(useAsync)';
+import './redux/redux';
 
 function Router() {
   return (

@@ -77,6 +77,12 @@ const UserExample = () => {
     console.log('계산중');
     return users.filter(user => user.active === true).length;
   }, [users]);
+  // input을 변경했을때마다 log가 찍히지만 useMemo를 사용하면 users값에 변화가 있을때만 실행
+  // 특정 결과값만을 재사용할 때 사용
+
+
+  //
+  //useCallback은 특정 함수를 새로 만들지 않고 재사용하고 싶을때 사용
 
   return (
     <>

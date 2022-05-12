@@ -13,7 +13,6 @@ const reducer = (state, action) => {
     case ACTIONS.WITHDRAW:
       console.log('decrement money', state);
       if (state === 0) {
-        // return (state = 0);
         return 0;
       }
       return state - action.payload;

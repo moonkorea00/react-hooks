@@ -17,7 +17,7 @@ const Todo = ({ todo, dispatch }) => {
         onClick={() =>{
           dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } })
         }}
-        // calls dispatch with the toogel-todo type and gives id of current todo inside payload
+        // calls dispatch with the toogle-todo type and gives id of current todo inside payload
       >
         Toggle
       </button>
