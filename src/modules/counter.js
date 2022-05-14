@@ -9,10 +9,10 @@ export const setDiff = (diff) => ({
   diff,
 });
 export const increase = () => ({
-  type: ACTION.SET_DIFF,
+  type: ACTION.INCREASE,
 });
 export const decrease = () => ({
-  type: ACTION.SET_DIFF,
+  type: ACTION.DECREASE,
 });
 
 const initialState = {

@@ -19,5 +19,3 @@ const Counter = ({ number, diff, onSetDiff, onIncrease, onDecrease }) => {
 };
 
 export default Counter;
-
-
