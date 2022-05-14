@@ -11,6 +11,7 @@ import UserExample from './pages/UserExample/UserExample';
 import ControlledInputs from './pages/ContorlledInputs/ControlledInputs';
 import Users from './pages/API/Users(useAsync)';
 import './redux/redux';
+import CounterContainer from './containers/CounterContainer';
 
 function Router() {
   return (
@@ -25,8 +26,6 @@ function Router() {
     <BrowserRouter>
       <Links />
       <Routes>
-        {/* <Route path="/react" element={<Main />} /> */}
-        {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/windowWidth" element={<WindowWidth />} />
         <Route path="/useReducerHook1" element={<UseReducerHook1 />} />
         <Route path="/useReducerHook2" element={<UseReducerHook2 />} />
@@ -34,15 +33,12 @@ function Router() {
         <Route path="/controlledInputs" element={<ControlledInputs />} />
         <Route path="/bank" element={<Bank />} />
         <Route path="/students" element={<Students />} />
-        {/* <Route path="/userExample" element={<UserExample />} /> */}
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
         <Route path="/users" element={<Users />} />
-        {/* <Route patj="/main" element={<Main />} /> */}
-        {/* <Route path="/*" element={<NotFound />} /> */}
+        <Route path="/counterContainer" element={<CounterContainer />} />
       </Routes>
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
