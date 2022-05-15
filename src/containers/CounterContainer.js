@@ -16,9 +16,11 @@ const CounterContainer = () => {
   const onIncrease = () => {
     dispatch(increase());
   };
+
   const onDecrease = () => {
     dispatch(decrease());
   };
+  
   const onSetDiff = diff => {
     dispatch(setDiff(diff));
   };

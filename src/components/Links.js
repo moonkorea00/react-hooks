@@ -36,7 +36,10 @@ const Links = () => {
             <Link to="/users">API practice</Link>
           </li>
           <li>
-            <Link to="/counterContainer">Counter Container (redux)</Link>
+            <Link to="/counterContainer">Counter (redux)</Link>
+          </li>
+          <li>
+            <Link to="/membersContainer">members (redux)</Link>
           </li>
         </ul>
       )}

@@ -3,15 +3,15 @@
 
 const Counter = ({ number, diff, onSetDiff, onIncrease, onDecrease }) => {
   const onChange = e => {
-    // onSetDiff(e.target.valueAsNumber);
-    onSetDiff(parseInt(e.target.value, 10));
+    onSetDiff(e.target.valueAsNumber);
+    // onSetDiff(parseInt(e.target.value, 10));
   };
   return (
     <div>
       <h1>{number}</h1>
       <div>
         <input type="number" value={diff} min="1" onChange={onChange} />
-        <button onClick={onIncrease}>+</button>
+        <button onClick={id => onIncrease(id)}>+</button>
         <button onClick={onDecrease}>-</button>
       </div>
     </div>

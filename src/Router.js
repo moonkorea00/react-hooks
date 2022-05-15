@@ -12,6 +12,7 @@ import ControlledInputs from './pages/ContorlledInputs/ControlledInputs';
 import Users from './pages/API/Users(useAsync)';
 import './redux/redux';
 import CounterContainer from './containers/CounterContainer';
+import MembersContainer from './containers/MembersContainer';
 
 function Router() {
   return (
@@ -38,6 +39,7 @@ function Router() {
         <Route path="/about" element={<About />} />
         <Route path="/users" element={<Users />} />
         <Route path="/counterContainer" element={<CounterContainer />} />
+        <Route path="/membersContainer" element={<MembersContainer />} />
       </Routes>
     </BrowserRouter>
   );

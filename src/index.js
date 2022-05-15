@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 
 // create store
 const store = createStore(rootReducer);
-// console.log('STORE', store.getState());
+console.log('STORE', store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,3 +19,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// create combineReducer
+// pass in rootReducer inside createStore()

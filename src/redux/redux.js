@@ -7,7 +7,6 @@ const initialState = {
   text: '',
   list: [],
 };
-console.log('hi');
 
 // 액션 타입
 const ACTION = {
@@ -57,7 +56,7 @@ const reducer = (state = initialState, action) => {
     case ACTION.ADD_TO_LIST:
       return {
         ...state,
-        list: state.list.concat({id: Date.now(), text: action.item})
+        list: state.list.concat({ id: Date.now(), text: action.item }),
         // ...state,
         // list: [
         //   ...state.list,
@@ -75,11 +74,11 @@ const reducer = (state = initialState, action) => {
 // store 만들기
 const store = createStore(reducer);
 // 현재 store안에 들어있는 상태
-console.log('store.getState() :', store.getState());
+// console.log('store.getState() :', store.getState());
 // 스토어안에 들어있는 상태가 바뀔 때 마다 호출되는 listener 함수
 const listener = () => {
   const state = store.getState();
-  console.log('listener: ', state);
+  // console.log('listener: ', state);
 };
 // 구독 해제하고 싶을 때는 unsubscribe()를 호출
 const unsubscribe = store.subscribe(listener);
@@ -90,5 +89,3 @@ store.dispatch(increase());
 store.dispatch(decrease());
 store.dispatch(changeText('new text'));
 store.dispatch({ type: ACTION.ADD_TO_LIST, item: 'hi' });
-
-
