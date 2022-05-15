@@ -6,6 +6,7 @@ const Counter = ({ number, diff, onSetDiff, onIncrease, onDecrease }) => {
     onSetDiff(e.target.valueAsNumber);
     // onSetDiff(parseInt(e.target.value, 10));
   };
+
   return (
     <div>
       <h1>{number}</h1>

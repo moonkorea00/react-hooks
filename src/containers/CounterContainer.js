@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import Counter from '../components/Counter';
+import Counter from '../components/redux/Counter';
 import { increase, decrease, setDiff } from '../modules/counter';
 
 // container component: 리덕스 스토어의 상태를 조회하거나 액션을 디스패치 할 수 있는 컴포넌트
@@ -20,7 +20,7 @@ const CounterContainer = () => {
   const onDecrease = () => {
     dispatch(decrease());
   };
-  
+
   const onSetDiff = diff => {
     dispatch(setDiff(diff));
   };

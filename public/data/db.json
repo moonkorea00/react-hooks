@@ -1,0 +1,19 @@
+{
+  "data": {
+    "totalMembers": 2,
+    "member": [
+      {
+        "id": 1,
+        "name": "Michael",
+        "familyMembers": 1,
+        "isMember": true
+      },
+      {
+        "id": 2,
+        "name": "Daniel",
+        "familyMembers": 1,
+        "isMember": true
+      }
+    ]
+  }
+}

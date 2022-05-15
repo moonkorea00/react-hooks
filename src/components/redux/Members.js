@@ -1,8 +1,6 @@
 const Members = props => {
-  const { onIncrement, onDecrement, totalMembers } = props;
-  const { familyMembers, isMember, id, name } = props.el;
-  // console.log('props]:', props);
-  // console.log(props.el);
+  const { onIncrement, onDecrement, onToggle, onDelete } = props;
+  const { familyMembers, id, name, isMember } = props.el;
 
   return (
     <>
@@ -16,14 +14,12 @@ const Members = props => {
             backgroundColor: 'grey',
           }}
         >
-          {name}
+          <span onClick={()=>onToggle(id)}style={{ marginRight: '15px', cursor: 'pointer'}}>{name}</span>
+          {isMember ? <span>O</span> : <span>X</span>}
         </div>
         <div style={{ border: '1px solid black' }}>
           Family Members: {familyMembers}
           <button
-            // onClick={id => onIncrement(id)}
-            // onClick={onIncrement}
-
             onClick={() => onIncrement(id)}
             style={{ marginLeft: '10vw' }}
           >
@@ -35,6 +31,9 @@ const Members = props => {
             style={{ marginLeft: '2vw' }}
           >
             -
+          </button>
+          <button style={{ marginLeft: '3vw' }} onClick={() => onDelete(id)}>
+            delete
           </button>
         </div>
       </div>

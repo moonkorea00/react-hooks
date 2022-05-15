@@ -1,5 +1,3 @@
-import MembersContainer from '../containers/MembersContainer';
-
 const ACTION = {
   INCREMENT: 'increment',
   DECREMENT: 'decrement',
@@ -9,19 +7,19 @@ const ACTION = {
 };
 
 const initialState = {
-  totalMembers: 1,
+  totalMembers: 2,
   member: [
     {
-      id: 2,
+      id: 1,
       name: 'Michael',
       familyMembers: 1,
       isMember: true,
     },
     {
-      id: 1,
+      id: 2,
       name: 'Daniel',
       familyMembers: 1,
-      isMember: true,
+      isMember: false,
     },
   ],
 };
@@ -37,13 +35,17 @@ export const decrement = id => ({
   type: ACTION.DECREMENT,
   id,
 });
-
-export const toggle = () => ({
-  type: ACTION.TOGGLE,
+export const create = data => ({
+  type: ACTION.CREATE,
+  data,
 });
-
-export const deleter = () => ({
+export const toggle = id => ({
+  type: ACTION.TOGGLE,
+  id,
+});
+export const deleter = (id) => ({
   type: ACTION.DELETE,
+  id
 });
 
 export const members = (state = initialState, action) => {
@@ -67,13 +69,30 @@ export const members = (state = initialState, action) => {
         ),
       };
     case ACTION.CREATE:
-      return;
+      return {
+        totalMembers: state.totalMembers + 1,
+        member: [
+          ...state.member,
+          {
+            id: Date.now(),
+            name: action.data.name,
+            familyMembers: action.data.familyMembers,
+            isMember: true,
+          },
+        ],
+      };
     case ACTION.TOGGLE:
       return {
         ...state,
+        member: state.member.map(el =>
+          el.id === action.id ? { ...el, isMember: !el.isMember } : el
+        ),
       };
     case ACTION.DELETE:
-      return;
+      return {
+        totalMembers: state.totalMembers - 1,
+        member: state.member.filter(el => el.id !== action.id),
+      };
     default:
       return state;
   }
